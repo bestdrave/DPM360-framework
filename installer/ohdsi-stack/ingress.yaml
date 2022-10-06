@@ -1,0 +1,36 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+ name: ohdsi-stack
+ namespace: ohdsi
+ annotations:
+   kubernetes.io/ingress.class: "public-iks-k8s-nginx"
+spec:
+  defaultBackend:
+    service:
+      name: ohdsi-webapi
+      port:
+        number: 8080
+  rules:
+    - host: <external link>
+      http:
+        paths:
+#          - path: /
+          - path: /WebAPI
+            pathType: Prefix
+            backend:
+              service:
+                name: ohdsi-webapi
+                port:
+                  number: 8080
+          - path: /atlas
+            pathType: Prefix
+            backend:
+              service:
+                name: ohdsi-atlas
+                port:
+                  number: 8080
+  tls:
+  - hosts:
+    - <external link>
+    secretName: <secret - implementation may depend on cloud provider>

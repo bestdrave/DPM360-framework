@@ -96,4 +96,19 @@ The following table lists the configurable parameters of the `model-registry` ch
 | mlflow.AWS_MLFLOW_BUCKET_NAME<br />mlflow.AWS_BUCKET  / AWS_MLFLOW_BUCKET | name of the bucket used for mlflow experiments<br /> | `mlflow-experiments` |
 | mlflow.resources | use this section to define the memory and cpu for the pod | `1` |
 | mlflow.containerport | port number of the container. Typically it is 5000 | `"9000"` |
-| mlflow.httpport | 
+| mlflow.httpport | port number that the service listens.  Typically same as containerport | `"9000"` |
+|   |   |   |
+|   |   |   |
+|   |   |   |
+
+Specify each parameter using the  YAML file that specifies the values for the parameters while installing the chart. For example:
+
+```console
+$ helm install modelregistry ./model-registry -n <your namespace> --values ./model-registry/values.yaml
+```
+
+##
+
+```
+
+```

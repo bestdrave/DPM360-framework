@@ -1,0 +1,46 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+ name: minio
+ namespace: ohdsi
+ annotations:
+  nginx.ingress.kubernetes.io/proxy-body-size: '0'
+spec:
+  rules:
+    - host: minio.<external link>
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: minio-mlflow-db-service
+                port:
+                  number: 9000
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+ name: mlflow
+ namespace: ohdsi
+ annotations:
+  nginx.ingress.kubernetes.io/proxy-body-size: '0'
+spec:
+  rules:
+    - host: mlflow.<external link>
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: mlflow-service
+                port:
+                  number: 5000
+          - path: /atlas
+            pathType: Prefix
+            backend:
+              service:
+                name: ohdsi-atlas
+                port:
+                  number: 8080
