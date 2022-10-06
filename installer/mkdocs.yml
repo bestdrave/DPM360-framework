@@ -1,0 +1,4 @@
+site_name: Installer
+nav:  
+  - Cluster Install: 'installer.md'
+  - Non-cluster Install: 'non_cluster_install.md' 
