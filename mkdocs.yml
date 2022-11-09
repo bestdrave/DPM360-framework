@@ -1,0 +1,44 @@
+site_name: DPM360
+
+repo_url: https://github.com/BiomedSciAI/DPM360
+repo_name: BiomedSciAI/DPM360
+
+theme:
+  name: material
+  features:
+    - navigation.expand
+  icon:
+    repo: fontawesome/brands/git-alt
+
+plugins:
+  - monorepo
+  - mknotebooks
+  - search
+  - mkdocstrings:
+      watch:
+        - lightsaber/
+      default_handler: python
+      handlers:
+        python:
+          selection:
+            docstring_style: numpy
+          rendering:
+            show_root_heading: true
+            show_if_no_docstring: true
+
+nav:
+  - Overview: 'index.md'
+  - Components:
+    - Installer: '!include ./installer/mkdocs.yml'
+    # - Service Builder: 'service_builder.md'
+    - Service Builder: '!include ./service_builder/mkdocs.yml'
+    - Cohort Tools: '!include ./cohort_tools/mkdocs.yml'
+    - Lightsaber: '!include ./lightsaber/mkdocs.yml'    
+    # - Installer: 
+    #  - Cluster Install: 'installer.md'
+    #  - Non-cluster Install: 'non_cluster_install.md' 
+
+# extra:
+#   version:
+#     provider: mike
+#     default: stable

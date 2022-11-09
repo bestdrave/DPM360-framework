@@ -1,0 +1,18 @@
+
+# Ref: https://www.timvink.nl/mkdocs-for-tech-doc/
+site_name: Lightsaber
+# repo_name: 'greenape/mknotebooks'
+# repo_url: https://github.com/greenape/mknotebooks
+# edit_uri: edit/master/examples/execute_with_preamble/docs/
+# use_directory_urls: False
+
+nav:
+  - Introduction: 'index.md'
+  - Design and Usage:
+    - Getting Started: 'user_guide.md'
+    - Example:
+      - IHM_Example_Using_HistGBT.ipynb
+      - IHM_Example_Using_LSTM.ipynb
+    - API: 'api.md'
+    - Release history: 'whats_new.md'
+  - Standalone Installation: 'install.md'
