@@ -1,0 +1,22 @@
+# USER DEFINED
+tgt_col: y_true
+idx_cols: stay
+time_order_col: 
+    - Hours
+    - seqnum
+
+feat_cols: null
+
+train:
+    tgt_file: '{DATA_DIR}/IHM_V0_COHORT_OUT_EXP-SPLIT0-train.csv'
+    feat_file: '{DATA_DIR}/IHM_V0_FEAT_EXP-SPLIT0-train.csv'
+
+val:
+    tgt_file: '{DATA_DIR}/IHM_V0_COHORT_OUT_EXP-SPLIT0-val.csv'
+    feat_file: '{DATA_DIR}/IHM_V0_FEAT_EXP-SPLIT0-val.csv'
+
+test:
+    tgt_file: '{DATA_DIR}/IHM_V0_COHORT_OUT_EXP-SPLIT0-test.csv'
+    feat_file: '{DATA_DIR}/IHM_V0_FEAT_EXP-SPLIT0-test.csv'
+
+# DATA DEFINITIO
